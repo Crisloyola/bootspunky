@@ -31,7 +31,7 @@ app.post('/', (req, res) => {
     const payload = event.payload;
     const tournament_id = payload.id;
     const tournament_url = `https://www.faceit.com/es/organizers/b37c2520-4cec-429b-8838-c09f4540a01f/spunky/${tournament_id}`
-    const DISCORD_CHANNEL_ID_TO_PUT_HERE = 1285098885886509146
+    const DISCORD_CHANNEL_ID_TO_PUT_HERE = '1285098885886509146'
     console.log('Event Type:', event.event);
     console.log('Payload:', payload);
 
