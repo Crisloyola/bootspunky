@@ -29,9 +29,9 @@ app.post('/', (req, res) => {
 
     const event = req.body;
     const payload = event.payload;
-    const tournament_id = payload.id;
-    const tournament_url = `https://www.faceit.com/es/organizers/b37c2520-4cec-429b-8838-c09f4540a01f/spunky/${tournament_id}`
-    const DISCORD_CHANNEL_ID_TO_PUT_HERE = '1285098885886509146'
+    const tournament_id = 'f39a25f4-11b7-4544-9271-d40487eaae40/SPUNKYY%2520TORNEO';
+    const tournament_url = `https://faceit.com/es/championship/${tournament_id}`
+
     console.log('Event Type:', event.event);
     console.log('Payload:', payload);
 
@@ -45,26 +45,26 @@ app.post('/', (req, res) => {
                 `**Slots:** ${payload.slots}\n` +
                 `**Total Rounds:** ${payload.total_rounds}\n\n` +
                 `Check out the tournament [here](${tournament_url})!\n` +
-                `Organized by: [Radiant Reapers](https://www.faceit.com/es/organizers/b37c2520-4cec-429b-8838-c09f4540a01f/spunky)\n` + // You have to change for your organisation
+                `Organized by: [Radiant Reapers](https://www.faceit.com/es/inv/nnkFcnV)\n` + // You have to change for your organisation
                 `Stay tuned for more updates!`;
-            sendMessageToChannel(DISCORD_CHANNEL_ID_TO_PUT_HERE, message); //Change DISCORD_CHANNEL_ID_TO_PUT_HERE with your own discord channel ID
+            sendMessageToChannel('1285098885886509146', message); //Change DISCORD_CHANNEL_ID_TO_PUT_HERE with your own discord channel ID
             break;
         case 'championship_cancelled':
             console.log('Payload Datas:', payload);
             const cancelledMessage = `❗ **Tournament Cancelled** ❗\n\n` +
                 `Check out the tournament details [HERE](${tournament_url})\n` +
-                `Organized by: [Radiant Reapers](https://www.faceit.com/es/organizers/b37c2520-4cec-429b-8838-c09f4540a01f/spunky)\n` + // You have to change for your organisation
+                `Organized by: [Radiant Reapers](https://www.faceit.com/es/inv/nnkFcnV)\n` + // You have to change for your organisation
                 `Sorry for the inconvenience.`;
-            sendMessageToChannel(DISCORD_CHANNEL_ID_TO_PUT_HERE, cancelledMessage); //Change DISCORD_CHANNEL_ID_TO_PUT_HERE with your own discord channel ID
+            sendMessageToChannel('1285098885886509146', cancelledMessage); //Change DISCORD_CHANNEL_ID_TO_PUT_HERE with your own discord channel ID
             break;
         case 'championship_started':
             const startedMessage = `🏆 **Tournament Started** 🏆\n\n` +
                 `The tournament **${payload.name}** has started!\n` +
                 `Check out the tournament details [here](${tournament_url})\n` +
-                `Follow the action live on our Twitch channel: [Twitch Radiant Reapers](https:/https://www.twitch.tv/radiantreapers357)\n\n` +
-                `Organized by: [Radiant Reapers](https://www.faceit.com/es/organizers/b37c2520-4cec-429b-8838-c09f4540a01f/spunky)\n` + // You have to change for your organisation
+                `Follow the action live on our Twitch channel: [Twitch Radiant Reapers](https://www.twitch.tv/radiantreapers357)\n\n` +
+                `Organized by: [Radiant Reapers](https://www.faceit.com/es/inv/nnkFcnV)\n` + // You have to change for your organisation
                 `Good luck to all participants!`;
-            sendMessageToChannel(DISCORD_CHANNEL_ID_TO_PUT_HERE, startedMessage); //Change DISCORD_CHANNEL_ID_TO_PUT_HERE with your own discord channel ID
+            sendMessageToChannel('1285098885886509146', startedMessage); //Change DISCORD_CHANNEL_ID_TO_PUT_HERE with your own discord channel ID
             break;
         case 'match_status_ready':
         case 'match_status_finished':
@@ -76,8 +76,8 @@ app.post('/', (req, res) => {
                 `**Team 1:** ${payload.teams && payload.teams[0] ? payload.teams[0].name : 'Unknown'}\n` +
                 `**Team 2:** ${payload.teams && payload.teams[1] ? payload.teams[1].name : 'Unknown'}\n\n` +
                 `Check the match details [here](${match_url})\n` +
-                `Organized by: [Radiant Reapers](https://www.faceit.com/es/organizers/b37c2520-4cec-429b-8838-c09f4540a01f/spunky)`; // You have to change for your organisation
-             sendMessageToChannel(DISCORD_CHANNEL_ID_TO_PUT_HERE, matchMessage); //Change DISCORD_CHANNEL_ID_TO_PUT_HERE with your own discord channel ID
+                `Organized by: [Radiant Reapers](https://www.faceit.com/es/inv/nnkFcnV)`; // You have to change for your organisation
+             sendMessageToChannel('1285098885886509146', matchMessage); //Change DISCORD_CHANNEL_ID_TO_PUT_HERE with your own discord channel ID
             break;
 
         default:
