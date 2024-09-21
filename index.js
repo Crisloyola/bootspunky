@@ -7,7 +7,7 @@ const app = express();
 app.use(express.json()); 
 
 const DISCORD_TOKEN = process.env.DISCORD_TOKEN;
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 1000;
 
 client.once('ready', () => {
     console.log(`Connected as ${client.user.tag}!`);
